@@ -4,5 +4,6 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home)
+    path('',views.home, name = '_home'),
+    path('add', views.add, name='_add')
 ]

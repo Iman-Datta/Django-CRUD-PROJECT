@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">First number</label>
+        <input type="number" class="form-control" id="firstNumber" name="firstNumber">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Second number</label>
+        <input type="number" class="form-control" id="secondNumber" name="secondNumber">
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+
+{% endblock %}
