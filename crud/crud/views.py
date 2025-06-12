@@ -11,6 +11,6 @@ def add(request: HttpRequest):
         fNum: int = int(request.POST['firstNumber'])
         sNum: int = int(request.POST['secondNumber'])
         print(fNum+sNum)
-        return render(request,"create.html")
+        return render(request,"add.html")
     
-    return render(request,"create.html")
+    return render(request,"add.html")
