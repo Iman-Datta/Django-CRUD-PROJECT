@@ -3,8 +3,10 @@ from django.shortcuts import render
 
 def home(request: HttpRequest):
     if request.method == 'GET':
-        msg: str = 'Welcome to Home'
-        return render(request,"index.html", {'message': msg})
+        context = {'msg1' : 'Welcome to Home',
+                   "msg2" : 'CALCULATOR'
+                   }
+        return render(request,"index.html", context)
 
 def add(request: HttpRequest):
     if request.method == 'POST':
@@ -25,11 +27,20 @@ def sub(request: HttpRequest):
     
     return render(request,"sub.html")
 
-def multiplecation(request: HttpRequest):
+def multiplication(request: HttpRequest):
     if request.method == 'POST':
         fNum: int = int(request.POST['firstNumber'])
         sNum: int = int(request.POST['secondNumber'])
         result = fNum*sNum
-        return render (request,"sub.html",{'result': result})
+        return render (request,"multiplication.html",{'result': result})
     
     return render(request,"multiplication.html")
+
+def division(request: HttpRequest):
+    if request.method == 'POST':
+        fNum: int = int(request.POST['firstNumber'])
+        sNum: int = int(request.POST['secondNumber'])
+        result = fNum/sNum
+        return render (request,"division.html",{'result': result})
+    
+    return render(request,"division.html")
