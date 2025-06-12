@@ -10,7 +10,26 @@ def add(request: HttpRequest):
     if request.method == 'POST':
         fNum: int = int(request.POST['firstNumber'])
         sNum: int = int(request.POST['secondNumber'])
+        result = fNum+sNum
         print(fNum+sNum)
-        return render(request,"add.html")
+        return render(request,"add.html", {'result': result})
     
     return render(request,"add.html")
+
+def sub(request: HttpRequest):
+    if request.method == 'POST':
+        fNum: int = int(request.POST['firstNumber'])
+        sNum: int = int(request.POST['secondNumber'])
+        result = fNum-sNum
+        return render (request,"sub.html",{'result': result})
+    
+    return render(request,"sub.html")
+
+def multiplecation(request: HttpRequest):
+    if request.method == 'POST':
+        fNum: int = int(request.POST['firstNumber'])
+        sNum: int = int(request.POST['secondNumber'])
+        result = fNum*sNum
+        return render (request,"sub.html",{'result': result})
+    
+    return render(request,"multiplication.html")
